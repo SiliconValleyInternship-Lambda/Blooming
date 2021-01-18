@@ -5,26 +5,22 @@ import 'semantic-ui-css/semantic.min.css'
 import './Page_UploadImage.css';
 import DragDrop from './DragDrop'
 
-function App() {
-  const [myImageURL, setMyImageURL] = useState("initial")
-  const [styleImageURL, setStyleImageURL] = useState("initial")
+function Page_UploadImage() {
+  const [myImage, setMyImage] = useState(null)
+  const [styleImage, setStyleImage] = useState(null)
 
   return (
     <div class="App-container">
       <div class="ui placeholder segment">
         <div class="ui two column very relaxed stackable grid">
-          {/* 첫번째  드래그앤드롭 박스 */}
+          {/* dropzone */}
           <div class="middle aligned column">
-            <DragDrop setURL={setMyImageURL}/>
-            <p>{myImageURL}</p>
+            <DragDrop setImage={setMyImage}/>
           </div>
-          {/* 두번째 드래그앤드롭 박스 */}
           <div class="middle aligned column">
-            <DragDrop setURL={setStyleImageURL}/>
-            <p>{styleImageURL}</p>
+            <DragDrop setImage={setStyleImage}/>
           </div>
         </div>
-        {/* 가운데 구분선 */}
         <div class="ui vertical divider">
           PLUS
         </div>
@@ -34,8 +30,8 @@ function App() {
       <div class="btn_transfer">
         <button class="ui inverted button" 
           onClick = { async() => {
-            const imageData = {myImage: myImageURL, styleImage: styleImageURL };
-            console.log(imageData)
+            const imageData = {myImage: myImage, styleImage: styleImage };
+            console.log(imageData) // [test] console에 보낼 데이터 보여줌
             // 이미지 전달
             const response = await fetch("/send_image", {
                   method: "POST",
@@ -60,4 +56,4 @@ function App() {
   )
 }
 
-export default App;
+export default Page_UploadImage;
