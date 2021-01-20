@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import './Page_UploadImage.css';
 import DragDrop from './DragDrop'
+import axios from 'axios'; 
 
 function Page_UploadImage() {
   const [myImage, setMyImage] = useState(null)
@@ -30,30 +31,36 @@ function Page_UploadImage() {
       <div class="btn_transfer">
         <button class="ui inverted button" 
           onClick = { async() => {
-            const imageData = {myImage: myImage, styleImage: styleImage };
-            console.log(imageData) // [test] console에 보낼 데이터 보여줌
+            const formData = new FormData();
+            formData.append("myImage", myImage);
+            formData.append("styleImage", styleImage);
+            checkFormData(formData); // [DEBUG] 보낼 데이터를 console에 보여줌
             // 이미지 전달
-            const response = await fetch("/send_image", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json"
-                  },
-                  body: JSON.stringify(imageData)
-            });
-            if (response.ok) {
-              console.log("response worked!");
-              // 결과 받기
-              fetch("/result").then(response =>
-                response.json().then(data => {
-                  console.log(data);
-                })
-              );
+            try {
+              const response = await axios.post("/send_image", formData, {
+                header: {
+                  "content-type": "multipart/form-data",
+                },
+              });
+              console.log(response.data);
+            } catch(error) {
+              console.log(error);
             }
           }}
         > Transfer </button>
       </div>
     </div>
   )
+}
+
+// [DEBUG]
+function checkFormData (formData) {
+  for (let key of formData.keys()) {
+    console.log(key); // FormData의 key 확인
+  }
+  for (let value of formData.values()) {
+    console.log(value); // FormData의 value 확인
+  }
 }
 
 export default Page_UploadImage;

@@ -6,10 +6,12 @@
 ## Install
 
 ### react drag-n-drop
-
 npm install --save react-dropzone
 
 ### react ui style
-
 npm install semantic-ui-react semantic-ui-css
+
+### send the data
+npm install axios
+
 

@@ -3,18 +3,22 @@ import {useDropzone} from 'react-dropzone';
 
 function DragDrop(props) {
   const [files, setFiles] = useState([]);
+  const [formData, setFormData] = useState([]);
   const {getRootProps, getInputProps, isDragActive} = useDropzone({
     accept: 'image/*',
     onDrop: acceptedFiles => {
       setFiles(acceptedFiles.map(file => Object.assign(file, {
         preview: URL.createObjectURL(file)
       })));
+      // const data = new FormData();
+      // data.append("image", acceptedFiles[0], acceptedFiles[0].name);
+      props.setImage(acceptedFiles[0]);
     }
   });
   
   const show_image = files.map(file => (
     <div class="img_input" key={file.name}>
-      <img src={file.preview} alt={file.name} onChange={props.setImage(file)}/>
+      <img src={file.preview} alt={file.name} />
     </div>
   ));
 
