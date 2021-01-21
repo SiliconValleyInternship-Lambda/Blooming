@@ -11,7 +11,10 @@ npm install --save react-dropzone
 ### react ui style
 npm install semantic-ui-react semantic-ui-css
 
-### send the data
-npm install axios
+### loading icon
+npm install --save react-spinners
 
+### tensorflow_hub
+1. pip install "tensorflow>=2.0.0"
+2. pip install --upgrade tensorflow-hub
 

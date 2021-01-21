@@ -1,13 +1,13 @@
 .App-container {
-  margin: 130px 90px 0 90px;
+  margin: 120px 120px 0 120px;
 }
 
 .ui.placeholder.segment {
-  height: 400px;
+  height: 430px;
 }
 
 .dropzone {
-  height: 350px;
+  height: 370px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -33,14 +33,22 @@ div.btn_transfer {
   margin-top: 30px;
 }
 
-.ui.inverted.button {
-  font-size: 18px;
+.ui.inverted.button  {
+  font-size: 19px;
   background-color: #000000;
   border-radius: 6px;
 }
 
 .ui.inverted.button:hover {
-  border: solid 1px #000000;
+  background-color: #414141;
+  color: #ffffff;
+}
+
+.ui.inverted.button:focus {
+  font-size: 19px;
+  background-color: #000000;
+  color: #ffffff;
+  /* border-radius: 6px; */
 }
 
 div.img_input {
