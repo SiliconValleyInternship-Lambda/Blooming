@@ -25,24 +25,26 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    html = '''
-<html>
-<head>
-    <title>스타일 변환</title>
-</head>
-<body>
-    <center>
-    스타일 변환<br>
-    <form action="/predict" method="post" enctype="multipart/form-data">
-        이미지 파일 <input type="file" name="file"><br>
-        <input type="submit" value="변환">
-    </form>
-    </center>
-</body>
-</html>
-'''
+    return "Hello World"
+#     html = '''
+# <html>
+# <head>
+#     <title>스타일 변환</title>
+# </head>
+# <body>
+#     <center>
+#     스타일 변환<br>
+#     <form action="/predict" method="post" enctype="multipart/form-data">
+#         이미지 파일 <input type="file" name="file"><br>
+#         <input type="submit" value="변환">
+#     </form>
+#     </center>
+# </body>
+# </html>
+# '''
 
-    return html
+#     return html
+    
 
 @app.route('/send_image', methods=['POST', 'GET'])
 def send_image():
@@ -78,6 +80,7 @@ def send_image():
             image.show()
             
             return send_file(bytesIO, mimetype='image/jpeg')
+            # return jsonify({"result": "test mode"})
         else:
             return jsonify({"result": "failed to get image"})
     else:
