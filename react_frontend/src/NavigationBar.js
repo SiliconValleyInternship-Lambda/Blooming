@@ -39,8 +39,8 @@ const NavigationBar = (props) => (
     <Sidebar.Pusher>
       <Segment basic className="nav_container">
         {
-          props.page=="transfer" ? 
-            ( <div> <Header as='h3' className="title"><Icon name='home'></Icon>TRANSFER IMAGE</Header></div> )
+          props.page == "transfer" ?
+            (<div> <Header as='h3' className="title"><Icon name='home'></Icon>TRANSFER IMAGE</Header></div>)
             : <Icon name='camera'>ALBUM</Icon>
         }
         {props.content}
