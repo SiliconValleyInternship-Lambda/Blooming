@@ -1,0 +1,12 @@
+h3.title  {
+    /* color: darkcyan !important; */
+    font-size: 35px !important;
+    margin-bottom: 55px !important;
+    padding: 60px 0 10px 60px !important;
+    border-bottom: solid 1px #cfcfcf !important;
+    box-shadow: 2px 2px 2px #ececec !important;
+}
+
+.nav_container {
+    padding: 0 !important;
+}

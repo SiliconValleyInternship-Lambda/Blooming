@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import UploadImage from './Page_UploadImage';
+import NavigationBar from './NavigationBar';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <UploadImage />
+    <NavigationBar page={'transfer'} content={<UploadImage />}/>
+    {/* <UploadImage /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
