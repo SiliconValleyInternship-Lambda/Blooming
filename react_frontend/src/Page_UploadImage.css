@@ -77,6 +77,11 @@ div.img_input > img{
 div.product {
   display: 'block';
   max-width: 100%;
-  max-height: 1000px;
+  max-height: 360px;
   text-align: center;
+}
+
+.img_result {
+  max-width: 100%;
+  max-height: 100%;
 }

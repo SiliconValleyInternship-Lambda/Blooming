@@ -11,6 +11,15 @@ import './NavigationBar.css'
 //   box-shadow: 2px 2px 2px #ececec;
 // }
 
+// const load_transferpage = () => {
+//   (<div> <Header as='h3' className="title"><Icon name='home'></Icon>TRANSFER IMAGE</Header></div>)
+//   history.push("/transfer");
+// }
+
+// const load_albumpage = () => {
+//   history.push("/album");
+// }
+
 const NavigationBar = (props) => (
   <Sidebar.Pushable as={Segment} >
     <Sidebar
@@ -22,15 +31,11 @@ const NavigationBar = (props) => (
       visible
       width='thin'
     >
-      <Menu.Item as='a'>
+      <Menu.Item as='a' id="transpageBtn" onClick={ () => props.history.push("/")}>
         <Icon name='home' />
-        Home
-      </Menu.Item>
-      {/* <Menu.Item as='a'>
-        <Icon name='gamepad' />
-        Games
-      </Menu.Item> */}
-      <Menu.Item as='a'>
+        Transfer
+      </Menu.Item > 
+      <Menu.Item as='a' id="albumpageBtn" onClick={ () => props.history.push("/album")}>
         <Icon name='camera' />
         Album
       </Menu.Item>
@@ -38,12 +43,13 @@ const NavigationBar = (props) => (
 
     <Sidebar.Pusher>
       <Segment basic className="nav_container">
-        {
-          props.page == "transfer" ?
-            (<div> <Header as='h3' className="title"><Icon name='home'></Icon>TRANSFER IMAGE</Header></div>)
-            : <Icon name='camera'>ALBUM</Icon>
-        }
-        {props.content}
+        {/* {          
+          page === "default" || page === "transfer" ?
+          (<div> <Header as='h3' className="title"><Icon name='home'></Icon>TRANSFER IMAGE</Header> {history.push("/transfer")} </div>)
+          : (<div> <Header as='h3' className="title"><Icon name='camera'></Icon>ALBUM</Header> {history.push("/album")} </div>)
+        } */}
+        {/* {props.content} */}
+        <Header as='h3' className="title"><Icon name={props.icon}></Icon>{props.pageName}</Header>{props.content}
       </Segment>
     </Sidebar.Pusher>
   </Sidebar.Pushable>
