@@ -31,7 +31,7 @@ const IMAGES =
 function Page_UploadImage({history}) {
     return (
         <NavigationBar history={history} icon={"camera"} pageName={"ALBUM"} content={
-            <div>
+            <div className="App-container">
                 <Gallery images={IMAGES}/>
             </div>
         }/>
