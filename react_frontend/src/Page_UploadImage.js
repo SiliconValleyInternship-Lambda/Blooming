@@ -66,10 +66,34 @@ function Page_UploadImage({history}) {
       }
     }
     else { // Save
+      // .. 입력폼 ..
 
+      // 이미지 정보 보냄
+      const imageData = {
+        author: "test",
+        name: "test image",
+        url: resultState
+      }
+      try {
+        const resp = await axios
+        .post("/save_image", {
+          author: "test",
+          name: "test image",
+          url: resultState
+        }, {
+          header: {
+            "content-type": "application/json",
+          },
+        })
+        .then(response => { 
+          // db 저장 성공
+          console.log(JSON.stringify(response.data));
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
-
 
   return (
     <NavigationBar history={history} icon={"home"} pageName={"TRANSFER IMAGE"} content={

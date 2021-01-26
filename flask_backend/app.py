@@ -9,6 +9,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 import numpy as np
 import io
+import json
 
 ##########모델 로드
 
@@ -25,26 +26,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello World"
-#     html = '''
-# <html>
-# <head>
-#     <title>스타일 변환</title>
-# </head>
-# <body>
-#     <center>
-#     스타일 변환<br>
-#     <form action="/predict" method="post" enctype="multipart/form-data">
-#         이미지 파일 <input type="file" name="file"><br>
-#         <input type="submit" value="변환">
-#     </form>
-#     </center>
-# </body>
-# </html>
-# '''
-
-#     return html
-    
+    return "Hello World"    
 
 @app.route('/send_image', methods=['POST', 'GET'])
 def send_image():
@@ -77,13 +59,60 @@ def send_image():
             bytesIO = io.BytesIO()
             image.save(bytesIO, 'JPEG', quality=70)
             bytesIO.seek(0)
-            image.show()
+            # image.show() # [DEBUG]
             
             return send_file(bytesIO, mimetype='image/jpeg')
-            # return jsonify({"result": "test mode"})
         else:
-            return jsonify({"result": "failed to get image"})
+            return jsonify({"result": "error - failed to get the image"})
     else:
-        return "not post mode"
+        return "hello world"
+
+@app.route('/save_image', methods=['POST', 'GET'])
+def save_image():
+    if request.method == "POST":
+        success = False
+        image_data = request.get_json()
+        author = image_data['author']
+        name = image_data['name']
+        src = image_data['url']
+        date = datetime()
+
+        sql = f"INSERT INTO trans_images (author, name, src, date) VALUES('{author}', '{name}', '{src}', '{date}');"
+        success = conn_db(sql, "insert")
+        return jsonify({"success": success})
+    else:
+        return "hello world"
+
+@app.route('/get_album', methods=['POST', 'GET'])
+def get_album():
+    if request.method == "GET": 
+        sql = "SELECT id, author, name, src FROM trans_images;"
+        data = conn_db(sql, "select")
+        return json.dumps(data)
+    else:
+        return "hello world"
+
+
+def conn_db(sql, type):
+    import pymysql ## pip3 install pymysql 
+
+    conn = pymysql.connect(host='54.180.145.225', user='sv', password='Fighting0!', db='lambda') # git에 업로드할때는 꼭 지워주세요!!!
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    curs.execute(sql)
+    if type == "insert":
+        conn.commit()
+        conn.close()
+        return True
+    elif type == "select":
+        rows = curs.fetchall()
+        conn.close()
+        return rows
+
+    return False
+
+def datetime():
+    import datetime
+    now = datetime.datetime.now()
+    return now.strftime('%Y%m%d%H%M%S')
 
 app.run(host='127.0.0.1', port=5000, debug=False)

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import NavigationBar from './NavigationBar'
 import './index.css';
 import Gallery from 'react-grid-gallery';
+import axios from "axios";
 
 const IMAGES =
 [{
@@ -29,6 +30,15 @@ const IMAGES =
 }]
 
 function Page_UploadImage({history}) {
+    useEffect(() => {  
+        axios.get("/get_album")
+        .then((Response) => {
+            console.log(Response.data);
+        }).catch((Error) => {
+            console.log(Error);
+        })
+    }, [])
+        
     return (
         <NavigationBar history={history} icon={"camera"} pageName={"ALBUM"} content={
             <div className="App-container">
