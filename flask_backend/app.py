@@ -93,17 +93,17 @@ def get_album():
         return "hello world"
 
 
-def conn_db(sql, type):
+def conn_db(sql, sql_type):
     import pymysql ## pip3 install pymysql 
 
     conn = pymysql.connect(host='54.180.145.225', user='sv', password='Fighting0!', db='lambda') # git에 업로드할때는 꼭 지워주세요!!!
     curs = conn.cursor(pymysql.cursors.DictCursor)
     curs.execute(sql)
-    if type == "insert":
+    if sql_type == "insert":
         conn.commit()
         conn.close()
         return True
-    elif type == "select":
+    elif sql_type == "select":
         rows = curs.fetchall()
         conn.close()
         return rows

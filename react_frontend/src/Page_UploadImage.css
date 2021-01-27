@@ -85,3 +85,37 @@ div.product {
   max-width: 100%;
   max-height: 100%;
 }
+
+.makeStyles-paper-12 {
+  border-radius: 30px;
+  border-color: #808080;
+  outline: 0;
+  background-color: #fafafa;
+}
+
+h2#transition-modal-title {
+  margin: 45px 15px 40px 15px;
+  color: #0d1313d6;
+  font-size: 25px;
+}
+
+div#transition-modal-description {
+  margin: 0 10px 20px 10px;
+}
+
+div#transition-modal-description > div {
+  margin: 5px 40px;
+  width: -webkit-fill-available;
+}
+
+div.ui.buttons {
+  margin: 30px 90px 0 90px !important;
+}
+
+.saveBtn {
+  background-color: #008b8bd1 !important;
+}
+
+.saveBtn:hover {
+  background-color: darkcyan !important;
+}

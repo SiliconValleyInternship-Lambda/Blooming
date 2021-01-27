@@ -29,11 +29,12 @@ const IMAGES =
         thumbnailHeight: 212
 }]
 
-function Page_UploadImage({history}) {
+function Page_Album({history}) {
     useEffect(() => {  
         axios.get("/get_album")
         .then((Response) => {
             console.log(Response.data);
+
         }).catch((Error) => {
             console.log(Error);
         })
@@ -48,4 +49,4 @@ function Page_UploadImage({history}) {
     )
 }
 
-export default Page_UploadImage;
+export default Page_Album;
