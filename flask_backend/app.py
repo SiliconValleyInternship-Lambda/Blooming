@@ -1,12 +1,7 @@
 import tensorflow_hub as hub
-from flask import Flask
-from flask import request
-from flask import send_file
-from flask import jsonify
+from flask import Flask, request, send_file, jsonify
 import tensorflow as tf
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import io
 import json
