@@ -9,8 +9,6 @@ function DragDrop(props) {
       setFiles(acceptedFiles.map(file => Object.assign(file, {
         preview: URL.createObjectURL(file)
       })));
-      // const data = new FormData();
-      // data.append("image", acceptedFiles[0], acceptedFiles[0].name);
       props.setImage(acceptedFiles[0]);
     }
   });

@@ -18,20 +18,22 @@ function Page_UploadImage({history}) {
   const [formOpen, setFormOpen] = useState(false);
   const [saveState, setSaveState] = useState(false);
 
-  // useEffect(() => {  
-  //   setMyImage(null);
-  //   setStyleImage(null);
-  //   setLoadingState(false);
-  //   setResultState(null);
-  //   setFormOpen(false);
-  //   setSaveState(false);
-  // }, [])
-
   const override = css`
     display: block;
     margin: 0 auto;
     border-color: #ffffff;
   `;
+
+  const clickBack = async () => {
+    // Back 버튼
+
+    // setMyImage(null);
+    // setStyleImage(null);
+    // setLoadingState(false);
+    // setResultState(null);
+    // setFormOpen(false);
+    // setSaveState(false);
+  }
 
   const clickSubmit = async () => {
     if(resultState == null) { // click 'Transfer' button
@@ -82,8 +84,6 @@ function Page_UploadImage({history}) {
     }
   };
 
-
-
   return (
     <NavigationBar history={history} icon={"home"} pageName={"TRANSFER IMAGE"} content={
       <div className="App-container">
@@ -117,6 +117,14 @@ function Page_UploadImage({history}) {
           )}
         </div>
         <div className="btn_transfer">
+          <button
+            className="ui inverted button"
+            onClick={clickBack}
+            id="backBtn"
+            disabled={loadingState}
+          >
+            Back
+          </button>
           <button
             className="ui inverted button"
             onClick={clickSubmit}
