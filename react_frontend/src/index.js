@@ -6,11 +6,9 @@ import Album from './Page_Album'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Route path="/" exact component={UploadImage} />
-      <Route path="/album" component={Album} />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Route path="/" exact component={UploadImage} />
+    <Route path="/album" component={Album} />
+  </BrowserRouter>,
   document.getElementById('root')
 );

@@ -14,7 +14,7 @@ function DragDrop(props) {
   });
   
   const show_image = files.map(file => (
-    <div class="img_input" key={file.name}>
+    <div className="img_input" key={file.name}>
       <img src={file.preview} alt={file.name} />
     </div>
   ));
