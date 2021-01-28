@@ -24,7 +24,7 @@ function Page_UploadImage({ history }) {
     border-color: #ffffff;
   `;
 
-  const clickBack = async () => { // Back button
+  const clickBack = () => { // Back button
     // set States as default
     setResultState(null);
     document.getElementById("submitBtn").innerHTML = "Transfer";
@@ -41,7 +41,9 @@ function Page_UploadImage({ history }) {
     for (var i = 0; i < arr.length; i++) {
       const a = arr[i];
       const children = a.getElementsByTagName("div");
-      a.removeChild(children[0]);
+      if (children.length > 0){
+        a.removeChild(children[0]);
+      }  
     }
   }
 
