@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button } from 'react-bootstrap';
 import "semantic-ui-css/semantic.min.css";
@@ -10,7 +10,7 @@ import { css } from "@emotion/core";
 import NavigationBar from "./NavigationBar"
 import InputForm from "./InputForm"
 
-function Page_UploadImage({history}) {
+function Page_UploadImage({ history }) {
   const [myImage, setMyImage] = useState(null);
   const [styleImage, setStyleImage] = useState(null);
   const [loadingState, setLoadingState] = useState(false);
@@ -24,30 +24,40 @@ function Page_UploadImage({history}) {
     border-color: #ffffff;
   `;
 
-  const clickBack = async () => {
-    // Back 버튼
+  const clickBack = async () => { // Back button
+    // set States as default
+    setResultState(null);
+    document.getElementById("submitBtn").innerHTML = "Transfer";
 
-    // setMyImage(null);
-    // setStyleImage(null);
-    // setLoadingState(false);
-    // setResultState(null);
-    // setFormOpen(false);
-    // setSaveState(false);
+    setMyImage(null);
+    setStyleImage(null);
+    setLoadingState(false);
+    setFormOpen(false);
+    setSaveState(false);
+
+    // remove input images from dropzones
+    const arr = document.getElementsByClassName("dropzone");
+
+    for (var i = 0; i < arr.length; i++) {
+      const a = arr[i];
+      const children = a.getElementsByTagName("div");
+      a.removeChild(children[0]);
+    }
   }
 
   const clickSubmit = async () => {
-    if(resultState == null) { // click 'Transfer' button
+    if (resultState == null) { // click 'Transfer' button
       if (myImage == null || styleImage == null) {
         alert("이미지를 입력해주세요.");
         return "";
       }
-  
+
       setLoadingState(true);
       const formData = new FormData();
       formData.append("myImage", myImage);
       formData.append("styleImage", styleImage);
       checkFormData(formData); // [DEBUG] 보낼 데이터를 console에 보여줌
-  
+
       // 이미지 전송
       let response = null;
       try {
@@ -58,7 +68,7 @@ function Page_UploadImage({history}) {
             },
             responseType: "arraybuffer",
           })
-          .then(response => { 
+          .then(response => {
             // 변환된 이미지 받음
             const prefix =
               "data:" + response.headers["content-type"] + ";base64,";
@@ -68,7 +78,7 @@ function Page_UploadImage({history}) {
       } catch (error) {
         console.log(error);
       }
-  
+
       // 이미지 전송 및 변환 성공
       if (response) {
         console.log(response);
@@ -110,11 +120,11 @@ function Page_UploadImage({history}) {
               loading={loadingState}
             />
           ) : (
-            // show transfered image
-              <div className="product">
-                  <img src= {resultState} alt="result" className="img_result" />
-              </div>
-          )}
+                // show transfered image
+                <div className="product">
+                  <img src={resultState} alt="result" className="img_result" />
+                </div>
+              )}
         </div>
         <div className="btn_transfer">
           <button
@@ -133,7 +143,7 @@ function Page_UploadImage({history}) {
           >
             Transfer
           </button>
-          <InputForm open={formOpen} setOpen={setFormOpen} url={resultState} setSaveState={setSaveState}/>
+          <InputForm open={formOpen} setOpen={setFormOpen} url={resultState} setSaveState={setSaveState} />
         </div>
       </div>
     } />
