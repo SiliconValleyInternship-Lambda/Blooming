@@ -86,29 +86,29 @@ div.product {
   max-height: 100%;
 }
 
-.makeStyles-paper-12 {
+#inputform_box {
   border-radius: 30px;
   border-color: #808080;
   outline: 0;
   background-color: #fafafa;
 }
 
-h2#transition-modal-title {
+.input_info > h2#transition-modal-title {
   margin: 45px 15px 40px 15px;
   color: #0d1313d6;
   font-size: 25px;
 }
 
-div#transition-modal-description {
+.input_info > div#transition-modal-description {
   margin: 0 10px 20px 10px;
 }
 
-div#transition-modal-description > div {
+.input_info > div#transition-modal-description > div {
   margin: 5px 40px;
   width: -webkit-fill-available;
 }
 
-div.ui.buttons {
+.input_info > div > div.ui.buttons {
   margin: 30px 90px 0 90px !important;
 }
 
@@ -118,4 +118,17 @@ div.ui.buttons {
 
 .saveBtn:hover {
   background-color: darkcyan !important;
+}
+
+div.success_save {
+  margin: 40px 45px 25px 45px;
+    text-align: center
+}
+
+div.success_save > p {
+  font-size: 17px;
+    font-weight: 600;
+    color: #222222d1;
+    margin-bottom: 45px;
+    margin-top: 7px;
 }

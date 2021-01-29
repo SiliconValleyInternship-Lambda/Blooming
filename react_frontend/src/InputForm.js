@@ -5,6 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import axios from "axios";
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -48,17 +49,13 @@ export default function InputForm(props) {
       .then(response => { 
         // db 저장 성공
         console.log(JSON.stringify(response.data));
-        props.setSaveState(true);
-        props.setOpen(false);
-        alert("저장 성공");
-        
+        props.setSaveState(true);        
       });
     } catch (error) {
       console.log(error);
       alert("[ERROR] Please check the console for an error message. ");
       setUsername("");
       setImagename("");
-      props.setOpen(false);
     }
   }
 
@@ -76,16 +73,21 @@ export default function InputForm(props) {
       }}
     >
       <Fade in={props.open}>
-        {/* {
+      <div className={classes.paper} id="inputform_box"> 
+        {
           props.saveState ? 
           (
-            <div className={classes.paper}>
-              <div >
-                <Icon name={props.icon}></Icon>
-              </div>
+            <div className="success_save">
+              <CheckCircleIcon fontSize="large" />
+              <p> 저장이 완료되었습니다. </p>
+              <div class="ui buttons">
+                <button class="ui button" onClick={async () => props.setOpen(false)}>닫기</button>
+                <div class="or"></div>
+                <button class="ui positive button saveBtn" onClick={ () => {props.setOpen(false); props.setGoAlbum(true); }}>Album 바로가기</button>
+              </div> 
             </div>
-          ) : ( */}
-            <div className={classes.paper}>
+          ) : (
+            <div className="input_info" >
               <h2 id="transition-modal-title">이미지에 대한 정보를 입력해주세요.</h2>
               <div id="transition-modal-description">
                 <TextField required id="standard-basic userName" label="user name" onChange={(e) => setUsername(e.target.value) }/> <br/>
@@ -97,8 +99,9 @@ export default function InputForm(props) {
                 </div> 
               </div>
             </div>
-          {/* )
-        } */}
+          )
+        }
+        </div>
       </Fade>
     </Modal>
   );

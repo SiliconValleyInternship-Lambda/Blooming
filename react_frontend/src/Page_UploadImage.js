@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button } from 'react-bootstrap';
 import "semantic-ui-css/semantic.min.css";
@@ -14,7 +14,6 @@ import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css'
 
 
-
 function Page_UploadImage({ history }) {
   const [myImage, setMyImage] = useState(null);
   const [styleImage, setStyleImage] = useState(null);
@@ -22,6 +21,7 @@ function Page_UploadImage({ history }) {
   const [resultState, setResultState] = useState(null);
   const [formOpen, setFormOpen] = useState(false);
   const [saveState, setSaveState] = useState(false);
+  const [goAlbum, setGoAlbum] = useState(false);
 
   const override = css`
     display: block;
@@ -114,6 +114,8 @@ function Page_UploadImage({ history }) {
     }
   };
 
+
+
   return (
     <NavigationBar history={history} icon={"home"} pageName={"TRANSFER IMAGE"} content={
       <div className="App-container">
@@ -164,7 +166,8 @@ function Page_UploadImage({ history }) {
           >
             Transfer
           </button>
-          <InputForm open={formOpen} setOpen={setFormOpen} url={resultState} saveState={saveState} setSaveState={setSaveState} />
+          <InputForm open={formOpen} setOpen={setFormOpen} url={resultState} saveState={saveState} setSaveState={setSaveState} setGoAlbum={setGoAlbum}/>
+          { goAlbum && history.push("/album") }
         </div>
       </div>
     } />
