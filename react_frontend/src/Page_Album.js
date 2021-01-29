@@ -5,6 +5,7 @@ import Gallery from 'react-grid-gallery';
 import axios from "axios";
 import { css } from "@emotion/core";
 import DotLoader from "react-spinners/DotLoader";
+import "semantic-ui-css/semantic.min.css";
 
 
 function Page_Album({ history }) {
@@ -84,17 +85,16 @@ function Page_Album({ history }) {
           loading={loadingState}
         />
       ) : (<>
-        <div className="search">
-          <SearchBar ss={ss} onUserInput={handleUserInput} />
-        </div>
         <div className="App-container">
+            <div className="search">
+            <SearchBar ss={ss} onUserInput={handleUserInput} />
+            </div>
           <Gallery images={tmps} />
         </div>
       </>)
     } />
   )
 }
-
 
 // search bar
 function SearchBar(props) {
@@ -103,15 +103,14 @@ function SearchBar(props) {
   }
 
   return (
-    <table className={"table"}>
-      <tr>
-        <td>
-          <input type={"text"} size={"25"}
-            className={"input-sm"} placeholder={"Input username..."}
+    <div class="ui action input">
+        <input type={"text"} size={"25"}
+            className={"input-sm"} placeholder={"Enter a user or image name.."}
             onChange={onChange} value={props.ss} />
-        </td>
-      </tr>
-    </table>
+        <button class="ui icon button">
+            <i class="search icon"></i>
+        </button>
+    </div>
   );
 }
 

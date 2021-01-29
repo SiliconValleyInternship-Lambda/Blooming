@@ -1,3 +1,5 @@
+/**** Root Style ****/
+
 #root {
   height: 100%;
 }
@@ -5,6 +7,8 @@
 .App-container {
   margin: 0 235px 0 80px;
 }
+
+/**** Page_UploadImage ****/
 
 .ui.placeholder.segment {
   height: 420px;
@@ -86,6 +90,8 @@ div.product {
   max-height: 100%;
 }
 
+/**** InputForm ****/
+
 #inputform_box {
   border-radius: 30px;
   border-color: #808080;
@@ -131,4 +137,10 @@ div.success_save > p {
     color: #222222d1;
     margin-bottom: 45px;
     margin-top: 7px;
+}
+
+/**** Page_Album ****/
+.search {
+  text-align: left;
+  margin-bottom: 20px;
 }
