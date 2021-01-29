@@ -69,6 +69,12 @@ function Page_UploadImage({ history }) {
           });
       } catch (error) {
         console.log(error);
+        alert("[ERROR] Please check the console for an error message.");
+        setMyImage(null);
+        setStyleImage(null);
+        setLoadingState(false);
+        setFormOpen(false);
+        setSaveState(false);
       }
 
       // 이미지 전송 및 변환 성공
@@ -131,11 +137,11 @@ function Page_UploadImage({ history }) {
             className="ui inverted button"
             onClick={clickSubmit}
             id="submitBtn"
-            disabled={saveState}
+            disabled={saveState || loadingState}
           >
             Transfer
           </button>
-          <InputForm open={formOpen} setOpen={setFormOpen} url={resultState} setSaveState={setSaveState} />
+          <InputForm open={formOpen} setOpen={setFormOpen} url={resultState} saveState={saveState} setSaveState={setSaveState} />
         </div>
       </div>
     } />

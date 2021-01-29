@@ -43,6 +43,8 @@ function Page_Album({history}) {
             setLoadingState(false);
         }).catch((Error) => {
             console.log(Error);
+            alert("[ERROR] Please check the console for an error message. ");
+            setLoadingState(false);
         })
     }, [])
         
