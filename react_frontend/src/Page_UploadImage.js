@@ -27,24 +27,14 @@ function Page_UploadImage({ history }) {
   const clickBack = () => { // Back button
     // set States as default
     setResultState(null);
-    document.getElementById("submitBtn").innerHTML = "Transfer";
-
     setMyImage(null);
     setStyleImage(null);
     setLoadingState(false);
     setFormOpen(false);
     setSaveState(false);
-
-    // remove input images from dropzones
-    const arr = document.getElementsByClassName("dropzone");
-
-    for (var i = 0; i < arr.length; i++) {
-      const a = arr[i];
-      const children = a.getElementsByTagName("div");
-      if (children.length > 0){
-        a.removeChild(children[0]);
-      }  
-    }
+    
+    // change button name
+    document.getElementById("submitBtn").innerHTML = "Transfer";
   }
 
   const clickSubmit = async () => {
@@ -129,14 +119,14 @@ function Page_UploadImage({ history }) {
               )}
         </div>
         <div className="btn_transfer">
-          <button
+          { resultState ? (<button
             className="ui inverted button"
             onClick={clickBack}
             id="backBtn"
-            disabled={loadingState}
+            disabled={!resultState}
           >
             Back
-          </button>
+          </button>) : null }
           <button
             className="ui inverted button"
             onClick={clickSubmit}
