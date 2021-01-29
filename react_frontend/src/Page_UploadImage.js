@@ -9,6 +9,11 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 import { css } from "@emotion/core";
 import NavigationBar from "./NavigationBar"
 import InputForm from "./InputForm"
+import ReactNotification from 'react-notifications-component';
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
+
+
 
 function Page_UploadImage({ history }) {
   const [myImage, setMyImage] = useState(null);
@@ -37,11 +42,28 @@ function Page_UploadImage({ history }) {
     document.getElementById("submitBtn").innerHTML = "Transfer";
   }
 
+  const message = (title, message, type) =>{
+    store.addNotification({
+      title: title,
+      message: message,
+      type: type,
+      insert: "top",
+      container: "top-left",
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: {
+        duration: 5000,
+      },
+      dismissable: {
+        Click: true
+      }
+    });
+  }
+
   const clickSubmit = async () => {
     if (resultState == null) { // click 'Transfer' button
       if (myImage == null || styleImage == null) {
-        alert("이미지를 입력해주세요.");
-        return "";
+        return message("주의", "사진을 입력해주세요 ~^^*", "danger")
       }
 
       setLoadingState(true);
@@ -95,6 +117,7 @@ function Page_UploadImage({ history }) {
   return (
     <NavigationBar history={history} icon={"home"} pageName={"TRANSFER IMAGE"} content={
       <div className="App-container">
+        <ReactNotification />
         <div className="ui placeholder segment">
           {!loadingState && !resultState ? (
             // drop-zone
