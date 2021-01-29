@@ -25,3 +25,5 @@ yarn-error.log*
 # .eslintcache 지우기
 git rm -rf --cached .
 git add .
+
+.eslintcache
