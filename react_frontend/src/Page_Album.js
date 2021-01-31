@@ -6,7 +6,23 @@ import axios from "axios";
 import { css } from "@emotion/core";
 import DotLoader from "react-spinners/DotLoader";
 import "semantic-ui-css/semantic.min.css";
+import styled from "styled-components";
 
+const TableContainer = styled.div`
+overflow: scroll;
+&::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+  }
+height: 55 0px;
+border: 10px solid white;
+`;
 
 function Page_Album({ history }) {
   const override = css`
@@ -89,7 +105,9 @@ function Page_Album({ history }) {
             <div className="search">
             <SearchBar ss={ss} onUserInput={handleUserInput} />
             </div>
+            <TableContainer>
           <Gallery images={tmps} />
+          </TableContainer>
         </div>
       </>)
     } />
