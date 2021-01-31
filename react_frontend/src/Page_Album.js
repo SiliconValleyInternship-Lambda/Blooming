@@ -20,7 +20,7 @@ overflow: scroll;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 6px;
   }
-height: 55 0px;
+height: 550px;
 border: 10px solid white;
 `;
 
@@ -54,7 +54,7 @@ function Page_Album({ history }) {
     axios.get("/get_album").then((Response) => {
       console.log("response - ok"); //[DEBUG]
       const imgs = [];
-      for (var i = 0; i < Response.data.length; i++) {
+      for (var i = Response.data.length - 1; i > -1; i--) {
         imgs.push({
           src: Response.data[i].src,
           thumbnail: Response.data[i].src,
