@@ -8,6 +8,10 @@
   margin: 0 235px 0 80px;
 }
 
+.Album-App-container {
+  margin: -35px 235px 0 80px;
+}
+
 /**** Page_UploadImage ****/
 
 .ui.placeholder.segment {
@@ -141,6 +145,18 @@ div.success_save > p {
 
 /**** Page_Album ****/
 .search {
-  text-align: left;
-  margin-bottom: 20px;
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+.tablecontainer {
+  height:100%;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.tablecontainer span {
+  background-color: #111111a6 !important;
+  color: #ffffff !important;
 }

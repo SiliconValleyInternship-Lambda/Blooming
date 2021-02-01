@@ -101,12 +101,12 @@ function Page_Album({ history }) {
           loading={loadingState}
         />
       ) : (<>
-        <div className="App-container">
-            <div className="search">
+        <div className="Album-App-container">
+          <div className="search">
             <SearchBar ss={ss} onUserInput={handleUserInput} />
-            </div>
-            <TableContainer>
-          <Gallery images={tmps} />
+          </div>
+          <TableContainer className='tablecontainer'>
+            <Gallery images={tmps} />
           </TableContainer>
         </div>
       </>)
