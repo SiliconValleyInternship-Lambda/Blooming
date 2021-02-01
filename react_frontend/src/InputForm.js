@@ -6,6 +6,10 @@ import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import axios from "axios";
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import ReactNotification from 'react-notifications-component';
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
+
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -29,10 +33,28 @@ export default function InputForm(props) {
   const handleClose = () => {
     props.setOpen(false);
   };
+
+  const message = (title, message, type) =>{
+    store.addNotification({
+      title: title,
+      message: message,
+      type: type,
+      insert: "top",
+      container: "top-left",
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: {
+        duration: 3000,
+      },
+      dismissable: {
+        Click: true
+      }
+    });
+  }
   
   const clickSave = async () => {
     if (username==="" || imagename==="") {
-      alert("username과 imagename을 입력해주세요!");
+      message("확인", "user name과 image name을 입력해주세요", "default")
       return false;
     }
     try {
@@ -53,7 +75,7 @@ export default function InputForm(props) {
       });
     } catch (error) {
       console.log(error);
-      alert("[ERROR] Please check the console for an error message. ");
+      message("ERROR", "Please check the console for an error message.", "warning")
       setUsername("");
       setImagename("");
     }
@@ -73,11 +95,13 @@ export default function InputForm(props) {
       }}
     >
       <Fade in={props.open}>
+      
       <div className={classes.paper} id="inputform_box"> 
         {
           props.saveState ? 
           (
             <div className="success_save">
+              
               <CheckCircleIcon fontSize="large" />
               <p> 저장이 완료되었습니다. </p>
               <div class="ui buttons">
@@ -89,10 +113,12 @@ export default function InputForm(props) {
           ) : (
             <div className="input_info" >
               <h2 id="transition-modal-title">이미지에 대한 정보를 입력해주세요.</h2>
+              <ReactNotification />
               <div id="transition-modal-description">
                 <TextField required id="standard-basic userName" label="user name" onChange={(e) => setUsername(e.target.value) }/> <br/>
                 <TextField required id="standard-basic imageName" label="image name" onChange={(e) => setImagename(e.target.value)}/> <br />
                 <div class="ui buttons">
+                  
                   <button class="ui button" onClick={async () => props.setOpen(false)}>취소</button>
                   <div class="or"></div>
                   <button class="ui positive button saveBtn" onClick={clickSave}>저장</button>

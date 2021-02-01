@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
-    "react": "^16.8.0",
+    "react": "^16.14.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.8.0",
     "react-dropzone": "^11.2.4",

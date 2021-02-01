@@ -52,7 +52,7 @@ function Page_UploadImage({ history }) {
       animationIn: ["animated", "fadeIn"],
       animationOut: ["animated", "fadeOut"],
       dismiss: {
-        duration: 5000,
+        duration: 3000,
       },
       dismissable: {
         Click: true
@@ -91,12 +91,12 @@ function Page_UploadImage({ history }) {
           });
       } catch (error) {
         console.log(error);
-        alert("[ERROR] Please check the console for an error message.");
         setMyImage(null);
         setStyleImage(null);
         setLoadingState(false);
         setFormOpen(false);
         setSaveState(false);
+        return message("ERROR", "Please check the console for an error message.", "warning")
       }
 
       // 이미지 전송 및 변환 성공

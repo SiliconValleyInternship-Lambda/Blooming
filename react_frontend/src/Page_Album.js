@@ -7,6 +7,10 @@ import { css } from "@emotion/core";
 import DotLoader from "react-spinners/DotLoader";
 import "semantic-ui-css/semantic.min.css";
 import styled from "styled-components";
+import ReactNotification from 'react-notifications-component';
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css'
+
 
 const TableContainer = styled.div`
 overflow: scroll;
@@ -50,6 +54,24 @@ function Page_Album({ history }) {
   }]);
   const [ss, setSs] = useState("");
 
+  const message = (title, message, type) =>{
+    store.addNotification({
+      title: title,
+      message: message,
+      type: type,
+      insert: "top",
+      container: "top-left",
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: {
+        duration: 3000,
+      },
+      dismissable: {
+        Click: true
+      }
+    });
+  }
+
   useEffect(() => {
     axios.get("/get_album").then((Response) => {
       console.log("response - ok"); //[DEBUG]
@@ -70,8 +92,8 @@ function Page_Album({ history }) {
       setLoadingState(false);
     }).catch((Error) => {
       console.log(Error);
-      alert("[ERROR] Please check the console for an error message. ");
       setLoadingState(false);
+      return message("ERROR", "Please check the console for an error message.", "warning")
     });
   }, [])
 
@@ -103,6 +125,7 @@ function Page_Album({ history }) {
       ) : (<>
         <div className="Album-App-container">
           <div className="search">
+            <ReactNotification />
             <SearchBar ss={ss} onUserInput={handleUserInput} />
           </div>
           <TableContainer className='tablecontainer'>
