@@ -50,6 +50,54 @@ pip install -r requirements.txt
 "web-vitals"
 ```
 
+## Development Environment
+```
+Backend: Flask
+Frontend: React
+Docker
+Nginx
+MySQL
+```
+
+## pip install packages
+```
+flask
+jsonify
+requests
+tensorflow>=2.0.0
+tensorflow-hub
+pillow
+*gunicorn>=20.0.4*
+*pymysql*
+*flask-mysql*
+flask
+jsonify
+requests
+tensorflow>=2.0.0
+tensorflow-hub
+pillow
+*gunicorn>=20.0.4*
+*pymysql*
+*flask-mysql*
+```
+
+## npm install packages
+```
+npm install --save react-dropzone
+```
+```
+npm install semantic-ui-react semantic-ui-css
+```
+```
+npm install axios
+```
+```
+npm i react-notifications-component
+```
+```
+npm install styled-components --save
+```
+
 ## Author
 - Boyun Seo, Soyeong Kim, Soobin Jung, Hakjun Moon
 - 2021 Silicon Valley Winter Online Internship Program - Team L 'Lambda'
