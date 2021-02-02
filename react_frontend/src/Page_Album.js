@@ -99,17 +99,22 @@ function Page_Album({ history }) {
 
   const handleUserInput = (ss) => {
     setSs(ss);
+    const newTemp = []
     if (ss !== "") {
-      const newTemp = []
       imgs.forEach((m) => {
         if (m.caption.indexOf(ss) === -1) {
           return;
         }
-        //배열에 추가
+        // push to array
         newTemp.push(m);
       })
-      setTmps(newTemp);
     }
+    if (ss === "") {
+      imgs.forEach((m) => {
+        newTemp.push(m);
+      })
+    }
+    setTmps(newTemp);
   }
 
   return (
