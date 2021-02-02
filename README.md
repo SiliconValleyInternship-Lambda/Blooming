@@ -6,7 +6,7 @@ Given one content image and one style image, we <b>create a new, target image wh
 
 An example is shown below, where the content image is of a woman, and the style image is of Starry night. The generated target image still contains the woman but is stylized with the colors and textures of the style image.
 ![example](https://user-images.githubusercontent.com/44187125/105284787-82d4d200-5bf6-11eb-9b5e-51e74c648f91.JPG)
-
+![GIF 2021-02-02 오후 6-21-25](https://user-images.githubusercontent.com/50094131/106579697-54ef7600-6584-11eb-89cc-fd4268bde665.gif)
 ## Installization
 
 1. Clone the repository, and navigate to the downloaded folder.
