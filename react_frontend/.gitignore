@@ -27,3 +27,4 @@ git rm -rf --cached .
 git add .
 
 .eslintcache
+__pycache__
