@@ -21,6 +21,35 @@ npm install
 pip install -r requirements.txt
 ```
 
+## Library
+```
+"@emotion/core"
+"@emotion/react"
+"@emotion/styled"
+"@material-ui/core"
+"@material-ui/icons"
+"@testing-library/jest-dom"
+"@testing-library/react"
+"@testing-library/user-event"
+"axios"
+"bootstrap"
+"material-ui-icons"
+"react",
+"react-bootstrap"
+"react-dom"
+"react-dropzone"
+"react-grid-gallery"
+"react-notifications"
+"react-notifications-component"
+"react-router-dom"
+"react-scripts"
+"react-spinners"
+"semantic-ui-css"
+"semantic-ui-react"
+"styled-components"
+"web-vitals"
+```
+
 ## Author
 - Boyun Seo, Soyeong Kim, Soobin Jung, Hakjun Moon
 - 2021 Silicon Valley Winter Online Internship Program - Team L 'Lambda'
