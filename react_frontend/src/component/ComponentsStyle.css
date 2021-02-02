@@ -1,0 +1,90 @@
+/* **** DragDrop **** */
+
+.dropzone {
+    height: 360px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-width: 2px;
+    border-radius: 2px;
+    border-color: #eeeeee;
+    border-style: dashed;
+    background-color: #fafafa;
+    color: #bdbdbd;
+    outline: none;
+    transition: border .24s ease-in-out;
+  }
+  
+  .dropzone:hover {
+    border-color:#acacac;
+  }
+
+  div.img_input {
+    display: 'inline-flex';
+    border-radius: 2;
+    margin-bottom: 8;
+    margin-right: 8;
+    max-width: 100%;
+    max-height: 250px;
+    padding: 4;
+    text-align: center;
+  }
+  
+  div.img_input > img{
+    display: 'block';
+    max-width: 100%;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+  }
+
+/**** InputForm ****/
+
+#inputform_box {
+    border-radius: 30px;
+    border-color: #808080;
+    outline: 0;
+    background-color: #fafafa;
+  }
+  
+  .input_info > h2#transition-modal-title {
+    margin: 45px 15px 40px 15px;
+    color: #0d1313d6;
+    font-size: 25px;
+  }
+  
+  .input_info > div#transition-modal-description {
+    margin: 0 10px 20px 10px;
+  }
+  
+  .input_info > div#transition-modal-description > div {
+    margin: 5px 40px;
+    width: -webkit-fill-available;
+  }
+  
+  .input_info > div > div.ui.buttons {
+    margin: 30px 90px 0 90px !important;
+  }
+  
+  .saveBtn {
+    background-color: #008b8bd1 !important;
+  }
+  
+  .saveBtn:hover {
+    background-color: darkcyan !important;
+  }
+  
+  div.success_save {
+    margin: 40px 45px 25px 45px;
+      text-align: center
+  }
+  
+  div.success_save > p {
+    font-size: 17px;
+      font-weight: 600;
+      color: #222222d1;
+      margin-bottom: 45px;
+      margin-top: 7px;
+  }

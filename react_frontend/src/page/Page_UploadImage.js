@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Button } from 'react-bootstrap';
 import "semantic-ui-css/semantic.min.css";
-import "./Page_UploadImage.css";
-import DragDrop from "./DragDrop";
+import "./PagesStyle.css";
+import DragDrop from "../component/DragDrop";
 import axios from "axios";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { css } from "@emotion/core";
-import NavigationBar from "./NavigationBar"
-import InputForm from "./InputForm"
+import NavigationBar from "../component/NavigationBar"
+import InputForm from "../component/InputForm"
 import ReactNotification from 'react-notifications-component';
 import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css'
@@ -113,7 +113,6 @@ function Page_UploadImage({ history }) {
       setFormOpen(true);
     }
   };
-
 
 
   return (

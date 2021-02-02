@@ -1,0 +1,73 @@
+/**** Root Style ****/
+
+#root {
+  height: 100%;
+}
+
+.App-container {
+  margin: 0 235px 0 80px;
+}
+
+.Album-App-container {
+  margin: -35px 235px 0 80px;
+}
+
+/**** Page_UploadImage ****/
+
+.ui.placeholder.segment {
+  height: 420px;
+}
+
+div.btn_transfer {
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 30px;
+}
+
+.ui.inverted.button  {
+  font-size: 19px;
+  background-color: #000000;
+  border-radius: 6px;
+}
+
+.ui.inverted.button:hover {
+  background-color: #414141;
+  color: #ffffff;
+}
+
+.ui.inverted.button:focus {
+  font-size: 19px;
+  background-color: #000000;
+  color: #ffffff;
+  /* border-radius: 6px; */
+}
+
+div.product {
+  display: 'block';
+  max-width: 100%;
+  max-height: 360px;
+  text-align: center;
+}
+
+.img_result {
+  max-width: 100%;
+  max-height: 360px;
+}
+
+/**** Page_Album ****/
+.search {
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+.tablecontainer {
+  height:100%;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.tablecontainer span {
+  background-color: #111111a6 !important;
+  color: #ffffff !important;
+}

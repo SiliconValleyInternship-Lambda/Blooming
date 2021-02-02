@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import UploadImage from './Page_UploadImage';
-import Album from './Page_Album'
-import { BrowserRouter, Route } from 'react-router-dom'
+import UploadImage from './page/Page_UploadImage';
+import Album from './page/Page_Album';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <BrowserRouter>

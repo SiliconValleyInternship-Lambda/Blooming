@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDropzone} from 'react-dropzone';
+import './ComponentsStyle.css';
+
 
 function DragDrop(props) {
   const [files, setFiles] = useState([]);
