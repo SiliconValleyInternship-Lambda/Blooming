@@ -37,15 +37,16 @@ git clone https://github.com/SiliconValleyInternship-Lambda/ImageStyleTransfer.g
 cd ImageStyleTransfer
 ```
 
-2. Install a few required pip packages, which are specified in the 'package.json' file and the 'requirements.txt' file 
+2. Install a few required packages, which are specified in the 'package.json' file and the 'requirements.txt' file
 
-## pip install packages
+
+### pip install packages
 ```
 cd flask-backend
 pip install -r requirements.txt
 ```
 
-### pip packages
+#### - pip packages
 ```
 flask
 jsonify
@@ -58,13 +59,13 @@ pymysql
 # gunicorn>=20.0.4
 ```
 
-## npm install packages
+### npm install packages
 ```
 cd react_frontend
 npm install
 ```
 
-### npm packages (libraries)
+#### - npm packages (libraries)
 ```
 "@emotion/core"
 "@emotion/react"
@@ -93,6 +94,7 @@ npm install
 "web-vitals"
 ```
 
+<br>
 
 
 ## Author
