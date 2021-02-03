@@ -70,15 +70,6 @@ pillow
 *gunicorn>=20.0.4*
 *pymysql*
 *flask-mysql*
-flask
-jsonify
-requests
-tensorflow>=2.0.0
-tensorflow-hub
-pillow
-*gunicorn>=20.0.4*
-*pymysql*
-*flask-mysql*
 ```
 
 ## npm install packages
