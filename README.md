@@ -7,6 +7,28 @@ Given one content image and one style image, we <b>create a new, target image wh
 An example is shown below, where the content image is of a woman, and the style image is of Starry night. The generated target image still contains the woman but is stylized with the colors and textures of the style image.
 ![example](https://user-images.githubusercontent.com/44187125/105284787-82d4d200-5bf6-11eb-9b5e-51e74c648f91.JPG)
 ![GIF 2021-02-03 오후 4-09-58](https://user-images.githubusercontent.com/50094131/106711264-993d4d80-663a-11eb-9022-c15b8f27a318.gif)
+
+<br>
+
+
+
+## Tech Stack
+
+```
+Backend: Flask
+Frontend: React
+Middleware: Gunicorn
+Nginx
+Docker
+Database: MySQL
+```
+
+
+|         Frontend         |      Backend      |         etc          |
+| :----------------------: | :---------------: | :------------------: |
+| ![react](https://img.shields.io/badge/react-v16.14.0-9cf?logo=react) ![Javascript](https://img.shields.io/badge/javascript-ES6+-yellow?logo=javascript) ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple) ![Styled-components](https://img.shields.io/badge/styled_components-v5.2.1-DB7093?logo=styled-components) | ![Flask](https://img.shields.io/badge/flask-v1.1.2-green?logo=flask) ![Python](https://img.shields.io/badge/python-v3.8.6-skyblue?logo=python) ![Gunicorn](https://img.shields.io/badge/gunicorn-v20.0.4-darkgreen?logo=gunicorn) ![MySQL](https://img.shields.io/badge/mysql-v4.2.11-blue?logo=mysql) | ![github](https://img.shields.io/badge/github-gray?logo=github) ![VScode](https://img.shields.io/badge/VScode-v1.52.1-blue?logo=visual-studio-code) ![Google Cloud Platform](https://img.shields.io/badge/Google_Cloud_Platform-vm_instance?color=red) ![Docker](https://img.shields.io/badge/docker-v20.10.2-blue?logo=docker) ![Nginx](https://img.shields.io/badge/Nginx-v1.14.0-brightgreen?logo=nginx) |
+<br />
+
 ## Installization
 
 1. Clone the repository, and navigate to the downloaded folder.
@@ -16,15 +38,33 @@ cd ImageStyleTransfer
 ```
 
 2. Install a few required pip packages, which are specified in the 'package.json' file and the 'requirements.txt' file 
+
+## pip install packages
 ```
-cd react-frontend
-npm install
-cd ..
 cd flask-backend
 pip install -r requirements.txt
 ```
 
-## Library
+### pip packages
+```
+flask
+jsonify
+requests
+tensorflow>=2.0.0
+tensorflow-hub
+pillow
+pymysql
+# flask-mysql
+# gunicorn>=20.0.4
+```
+
+## npm install packages
+```
+cd react_frontend
+npm install
+```
+
+### npm packages (libraries)
 ```
 "@emotion/core"
 "@emotion/react"
@@ -53,46 +93,12 @@ pip install -r requirements.txt
 "web-vitals"
 ```
 
-## Development Environment
-```
-Backend: Flask
-Frontend: React
-Docker
-Nginx
-MySQL
-```
 
-## pip install packages
-```
-flask
-jsonify
-requests
-tensorflow>=2.0.0
-tensorflow-hub
-pillow
-*gunicorn>=20.0.4*
-*pymysql*
-*flask-mysql*
-```
-
-## npm install packages
-```
-npm install --save react-dropzone
-```
-```
-npm install semantic-ui-react semantic-ui-css
-```
-```
-npm install axios
-```
-```
-npm i react-notifications-component
-```
-```
-npm install styled-components --save
-```
 
 ## Author
-- Boyun Seo, Soyeong Kim, Soobin Jung, Hakjun Moon
 - 2021 Silicon Valley Winter Online Internship Program - Team L 'Lambda'
-- Go to github: [Boyun Seo](https://github.com/boyuuuun),   [Soyeong Kim](https://github.com/kimsoyeong),   [Soobin Jung](https://github.com/SoobinJung1013),   [Hakjun Moon](https://github.com/MHJworld)
+
+
+| Boyun Seo | Soyeong Kim | Soobin Jung | Hakjun Moon |
+|:---:|:---:|:---:|:---:|
+| [**@boyuuuun**](https://github.com/boyuuuun)| [**@kimsoyeong**](https://github.com/kimsoyeong) | [**@SoobinJung1013**](https://github.com/SoobinJung1013) | [**@MHJworld**](https://github.com/MHJworld) 
