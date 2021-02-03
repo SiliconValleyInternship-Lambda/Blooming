@@ -6,7 +6,7 @@ Given one content image and one style image, we <b>create a new, target image wh
 
 An example is shown below, where the content image is of a woman, and the style image is of Starry night. The generated target image still contains the woman but is stylized with the colors and textures of the style image.
 ![example](https://user-images.githubusercontent.com/44187125/105284787-82d4d200-5bf6-11eb-9b5e-51e74c648f91.JPG)
-![GIF 2021-02-03 오후 3-14-40](https://user-images.githubusercontent.com/50094131/106706160-9a6a7c80-6632-11eb-990d-4b6d20b2741e.gif)
+![GIF 2021-02-03 오후 4-09-58](https://user-images.githubusercontent.com/50094131/106711264-993d4d80-663a-11eb-9022-c15b8f27a318.gif)
 ## Installization
 
 1. Clone the repository, and navigate to the downloaded folder.
@@ -17,7 +17,10 @@ cd ImageStyleTransfer
 
 2. Install a few required pip packages, which are specified in the 'package.json' file and the 'requirements.txt' file 
 ```
+cd react-frontend
 npm install
+cd ..
+cd flask-backend
 pip install -r requirements.txt
 ```
 
