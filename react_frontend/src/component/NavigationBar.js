@@ -13,11 +13,11 @@ const NavigationBar = (props) => (
       visible
       width='thin'
     >
-      <Menu.Item as='a' id="transpageBtn" onClick={ () => props.history.push("/")}>
+      <Menu.Item as='a' id="transpageBtn" onClick={() => props.history.push("/transfer")}>
         <Icon name='home' />
         Transfer
-      </Menu.Item > 
-      <Menu.Item as='a' id="albumpageBtn" onClick={ () => props.history.push("/album")}>
+      </Menu.Item >
+      <Menu.Item as='a' id="albumpageBtn" onClick={() => props.history.push("/album")}>
         <Icon name='camera' />
         Album
       </Menu.Item>

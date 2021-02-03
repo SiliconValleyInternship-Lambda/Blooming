@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+Row {
+  margin: 3em;
+}
+
+.head{
+  text-align: center;
+  margin-top: 15em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  padding-right: 0;
+  padding-left: 0;
+}
+.head h1 {
+  /* BLOOMING */
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 83%;
+
+  align-items: center;
+  letter-spacing: 0.15em;
+}
+
+.head p{
+  /* MAKE YOUR OWN MASTERPIECE */
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 167%;
+
+  /* display: flex; */
+  align-items: center;
+  letter-spacing: 0.15em;
+}
+
+/* transfer button */
+.transferbtn {
+  padding-top: 5em;
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+}
+.transferbtn a {
+  color: black;
+  font-size: 50px;
+  text-decoration: none;
+}
+.transferbtn a:hover {
+   color: #4d4d4d;
+   text-decoration: none;
+}
+.transferbtn p{
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  align-items: center;
+
+  color: black;
+}
+
+/* black box */
+.blackBox {
+  margin: 3em 2em 3em 2em;
+  /* width: auto; */
+  height: 45em;
+  background-color: black;
+  text-align: center;
+}
+
+.blackBox p{
+  padding-top: 30%;
+  font-family: 'Homemade Apple', cursive;
+  color: white;
+  font-size: large;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -3px 20px rgba(255,255,255,0.4);
+}
+.blackBox p:hover{
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: none;
+}
