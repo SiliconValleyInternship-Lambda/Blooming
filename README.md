@@ -1,5 +1,7 @@
 # Image Style Transfer
 
+> If you want to run this project with docker, you can find the full project(with docker) [Here](https://github.com/SiliconValleyInternship-Lambda/Blooming).
+
 This is a <b>website to change the image style to the style you want.</b>
 
 Given one content image and one style image, we <b>create a new, target image which should contain our desired content and style components</b>.
@@ -26,7 +28,7 @@ Database: MySQL
 
 |         Frontend         |      Backend      |         etc          |
 | :----------------------: | :---------------: | :------------------: |
-| ![react](https://img.shields.io/badge/react-v16.14.0-9cf?logo=react) ![Javascript](https://img.shields.io/badge/javascript-ES6+-yellow?logo=javascript) ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple) ![Styled-components](https://img.shields.io/badge/styled_components-v5.2.1-DB7093?logo=styled-components) | ![Flask](https://img.shields.io/badge/flask-v1.1.2-green?logo=flask) ![Python](https://img.shields.io/badge/python-v3.8.6-skyblue?logo=python) ![Gunicorn](https://img.shields.io/badge/gunicorn-v20.0.4-darkgreen?logo=gunicorn) ![MySQL](https://img.shields.io/badge/mysql-v4.2.11-blue?logo=mysql) | ![github](https://img.shields.io/badge/github-gray?logo=github) ![VScode](https://img.shields.io/badge/VScode-v1.52.1-blue?logo=visual-studio-code) ![Google Cloud Platform](https://img.shields.io/badge/Google_Cloud_Platform-vm_instance?color=red) ![Docker](https://img.shields.io/badge/docker-v20.10.2-blue?logo=docker) ![Nginx](https://img.shields.io/badge/Nginx-v1.14.0-brightgreen?logo=nginx) |
+| ![react](https://img.shields.io/badge/react-v16.14.0-9cf?logo=react) ![Javascript](https://img.shields.io/badge/javascript-ES6+-yellow?logo=javascript) ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple) ![Styled-components](https://img.shields.io/badge/styled_components-v5.2.1-DB7093?logo=styled-components) | ![Flask](https://img.shields.io/badge/flask-v1.1.2-green?logo=flask) ![Python](https://img.shields.io/badge/python-v3.8.6-skyblue?logo=python) | ![github](https://img.shields.io/badge/github-gray?logo=github) ![VScode](https://img.shields.io/badge/VScode-v1.52.1-blue?logo=visual-studio-code) |
 
 ### Used Model
 [Image Style Transfer model](https://github.com/magenta/magenta/tree/master/magenta/models/arbitrary_image_stylization) from Tensorflow-hub
