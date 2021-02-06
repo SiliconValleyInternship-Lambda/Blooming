@@ -1,8 +1,6 @@
-# Image Style Transfer
+# Blooming : Image Style Transfer Website
 
-> If you want to run this project with docker, you can find the full project(with docker) [Here](https://github.com/SiliconValleyInternship-Lambda/Blooming).
-
-This is a <b>website to change the image style to the style you want.</b>
+'Blooming 🌼' is a <b>website to change the image style to the style you want.</b>
 
 Given one content image and one style image, we <b>create a new, target image which should contain our desired content and style components</b>.
 
