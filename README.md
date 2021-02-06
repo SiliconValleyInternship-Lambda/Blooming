@@ -28,79 +28,163 @@ Database: MySQL
 
 |         Frontend         |      Backend      |         etc          |
 | :----------------------: | :---------------: | :------------------: |
-| ![react](https://img.shields.io/badge/react-v16.14.0-9cf?logo=react) ![Javascript](https://img.shields.io/badge/javascript-ES6+-yellow?logo=javascript) ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple) ![Styled-components](https://img.shields.io/badge/styled_components-v5.2.1-DB7093?logo=styled-components) | ![Flask](https://img.shields.io/badge/flask-v1.1.2-green?logo=flask) ![Python](https://img.shields.io/badge/python-v3.8.6-skyblue?logo=python) | ![github](https://img.shields.io/badge/github-gray?logo=github) ![VScode](https://img.shields.io/badge/VScode-v1.52.1-blue?logo=visual-studio-code) |
+| ![react](https://img.shields.io/badge/react-v16.14.0-9cf?logo=react) ![Javascript](https://img.shields.io/badge/javascript-ES6+-yellow?logo=javascript) ![Bootstrap](https://img.shields.io/badge/bootstrap-v1.4.3-9cf?logo=bootstrap) ![axios](https://img.shields.io/badge/axios-v0.21.1-9cf?color=purple) ![Styled-components](https://img.shields.io/badge/styled_components-v5.2.1-DB7093?logo=styled-components) | ![Flask](https://img.shields.io/badge/flask-v1.1.2-green?logo=flask) ![Python](https://img.shields.io/badge/python-v3.8.6-skyblue?logo=python) ![Gunicorn](https://img.shields.io/badge/gunicorn-v20.0.4-darkgreen?logo=gunicorn) ![MySQL](https://img.shields.io/badge/mysql-v4.2.11-blue?logo=mysql) | ![Docker](https://img.shields.io/badge/docker-v20.10.2-blue?logo=docker) ![Nginx](https://img.shields.io/badge/Nginx-v1.14.0-brightgreen?logo=nginx) ![github](https://img.shields.io/badge/github-gray?logo=github) ![VScode](https://img.shields.io/badge/VScode-v1.52.1-blue?logo=visual-studio-code) ![Google Cloud Platform](https://img.shields.io/badge/Google_Cloud_Platform-VM_instance-red?logo=gcp) ![AWS](https://img.shields.io/badge/AWS-EC2_instance-orange?logo=aws)  |
 
 ### Used Model
 [Image Style Transfer model](https://github.com/magenta/magenta/tree/master/magenta/models/arbitrary_image_stylization) from Tensorflow-hub
  
-<br>
+<br />
 
-## Installization
+### System Architecture
 
-1. Clone the repository, and navigate to the downloaded folder.
+![시스템아키텍쳐-최종](https://user-images.githubusercontent.com/44187125/106837480-e9b9b700-66dd-11eb-91c8-498850709e1a.png)
+
+<br />
+
+## Initialization
+
+- clone the repository
+
+    ```
+    $ git clone https://github.com/SiliconValleyInternship-Lambda/ImageStyleTransfer.git
+    $ cd ImageStyleTransfer
+    ```
+
+### 1. Backend: Flask 🌶
+- Install required pip packages
+
+    ```
+    $ cd flask_backend
+    $ pip install -r requirements.txt
+    ```
+    
+    #### pip packages
+    ```
+    flask
+    jsonify
+    requests
+    tensorflow>=2.0.0
+    tensorflow-hub
+    pillow
+    pymysql
+    ```
+
+- Flask run
+
+    ```
+    $ flask run
+    ```
+
+### 2. Frontend: React ❄
+
+- Install npm packages
+
+  ```
+  $ cd react_frontend
+  $ npm install
+  ```
+  
+  #### npm packages (libraries)
+  ```
+  "@emotion/core"
+  "@emotion/react"
+  "@emotion/styled"
+  "@material-ui/core"
+  "@material-ui/icons"
+  "@testing-library/jest-dom"
+  "@testing-library/react"
+  "@testing-library/user-event"
+  "axios"
+  "bootstrap"
+  "material-ui-icons"
+  "react",
+  "react-bootstrap"
+  "react-dom"
+  "react-dropzone"
+  "react-grid-gallery"
+  "react-notifications"
+  "react-notifications-component"
+  "react-router-dom"
+  "react-scripts"
+  "react-spinners"
+  "semantic-ui-css"
+  "semantic-ui-react"
+  "styled-components"
+  "web-vitals"
+  ```
+
+- build and run
+
+    ```
+    $ npm run build
+    $ npm start
+    ```
+
+
+### 3. Docker 🐳
+
+- docker compose build and up
+
 ```
-git clone https://github.com/SiliconValleyInternship-Lambda/ImageStyleTransfer.git
-cd ImageStyleTransfer
+$ cd ImageStyleTransfer
+$ docker-compose up --build
 ```
 
-2. Install a few required packages, which are specified in the 'package.json' file and the 'requirements.txt' file
 
+1) **build the docker image**
 
-### pip install packages
-```
-cd flask-backend
-pip install -r requirements.txt
-```
+    ```
+    $ docker-compose build
+    ```
 
-#### - pip packages
-```
-flask
-jsonify
-requests
-tensorflow>=2.0.0
-tensorflow-hub
-pillow
-pymysql
-# flask-mysql
-# gunicorn>=20.0.4
-```
+2) **docker compose run**
 
-### npm install packages
-```
-cd react_frontend
-npm install
-```
+    ```
+    $ docker-compose up
+    ```
 
-#### - npm packages (libraries)
+    **Note:** 
+
+    docker compose run with daemon mode
+
+    ```
+    $ docker-compose up -d
+    ```
+
+#### Nginx
+
+- **Frontend**
+
+    ```
+    http://localhost:80
+    ```
+
+- **Backend**
+
+    ```
+    http://localhost:8000
+    ```
+
+#### Flask Python application
+
 ```
-"@emotion/core"
-"@emotion/react"
-"@emotion/styled"
-"@material-ui/core"
-"@material-ui/icons"
-"@testing-library/jest-dom"
-"@testing-library/react"
-"@testing-library/user-event"
-"axios"
-"bootstrap"
-"material-ui-icons"
-"react",
-"react-bootstrap"
-"react-dom"
-"react-dropzone"
-"react-grid-gallery"
-"react-notifications"
-"react-notifications-component"
-"react-router-dom"
-"react-scripts"
-"react-spinners"
-"semantic-ui-css"
-"semantic-ui-react"
-"styled-components"
-"web-vitals"
+http://localhost:5000
 ```
 
-<br>
+#### React application
+
+```
+http://localhost:3000
+```
+
+
+### 4. Database: MySQL 🗂
+
+```
+http://host_ip:3306
+```
+
+
 
 
 ## Author
