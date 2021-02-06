@@ -14,9 +14,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # Bundle app source
 
-COPY ./react/package*.json ./
+COPY ./react_frontend/package*.json ./
 RUN npm install --silent
-# RUN npm install @material-ui/icons@4.11.2
 
 EXPOSE 3000
 
