@@ -89,7 +89,7 @@ def get_album():
 
 
 def conn_db(sql, sql_type):
-    import pymysql # pip3 install pymysql 
+    import pymysql
 
     conn = pymysql.connect(host='54.180.145.225', user='sv', password='Fighting0!', db='lambda') # git에 업로드할때는 꼭 지워주세요!!!
     curs = conn.cursor(pymysql.cursors.DictCursor)
@@ -110,4 +110,4 @@ def datetime():
     now = datetime.datetime.now()
     return now.strftime('%Y%m%d%H%M%S')
 
-app.run(host='127.0.0.1', port=5000, debug=False)
+app.run(host='0.0.0.0', debug=True)
