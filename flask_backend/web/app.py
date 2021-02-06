@@ -6,7 +6,7 @@ import numpy as np
 import io
 import json
 
-##########모델 로드
+########## load model
 
 base_model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
 
@@ -15,7 +15,7 @@ placeholder_1 = tf.keras.layers.Input(shape=(None, None, 3), dtype=tf.float32)
 net = hub.KerasLayer(base_model, signature='serving_default', signature_outputs_as_dict=True)({'placeholder': placeholder, 'placeholder_1': placeholder_1})
 model = tf.keras.models.Model({'placeholder': placeholder, 'placeholder_1': placeholder_1}, net)
 
-##########모델 예측
+########## model predict
 
 app = Flask(__name__)
 
@@ -89,7 +89,7 @@ def get_album():
 
 
 def conn_db(sql, sql_type):
-    import pymysql # pip3 install pymysql 
+    import pymysql
 
     conn = pymysql.connect(host='54.180.145.225', user='sv', password='Fighting0!', db='lambda') # git에 업로드할때는 꼭 지워주세요!!!
     curs = conn.cursor(pymysql.cursors.DictCursor)
@@ -110,4 +110,5 @@ def datetime():
     now = datetime.datetime.now()
     return now.strftime('%Y%m%d%H%M%S')
 
-app.run(host='127.0.0.1', port=5000, debug=False)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
