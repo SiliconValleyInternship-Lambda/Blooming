@@ -91,7 +91,7 @@ def get_album():
 def conn_db(sql, sql_type):
     import pymysql
 
-    conn = pymysql.connect(host='54.180.145.225', user='sv', password='Fighting0!', db='lambda') # git에 업로드할때는 꼭 지워주세요!!!
+    conn = pymysql.connect(host='', user='', password='', db='') # host(=서버주소), user, password, db 적어야함!!
     curs = conn.cursor(pymysql.cursors.DictCursor)
     curs.execute(sql)
     if sql_type == "insert":
