@@ -1,6 +1,6 @@
 # Blooming : Image Style Transfer Website
 
-<b>'Blooming 🌼'</b> is a <U><i>website to change the image style to the style you want!</i></U>.
+<b>'Blooming 🌼'</b> is a <U><i>website to change the image style to the style you want</i></U>.
 
 Given one content image and one style image, we <b>create a new, target image which should contain our desired content and style components</b>.
 
